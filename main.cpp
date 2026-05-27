@@ -15,6 +15,17 @@ int main(int argc, char *argv[]){
         list->remove();
         std::cout << list->size() << std::endl;
     }
+
+    for (int i = 0;i<LENTGH;i++){
+        list->add(98.f);
+        std::cout << list->size() << std::endl;
+    }
+
+    list->removeAt(3);
+    std::cout << list->size() << std::endl;
+    list->removeAt(list->size() - 1);
+    list->removeAt(0);
+    std::cout << list->size() << std::endl;
     
     
     return 0;

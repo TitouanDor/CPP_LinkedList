@@ -60,6 +60,33 @@ class LinkedList{
             }
             temp->setNext(nullptr);
         }
+
+        /**
+         * Method to remove the node at the given index of the LinkedList
+         * 
+         * @param index the index of the node to remove
+         */
+        void removeAt(unsigned short index){
+            if(this->head == nullptr){
+                return;
+            }
+            if (index == 0){
+                this->head = this->head->getNext();
+                return;
+            }
+
+            Node<T> *temp = this->head;
+            for (unsigned short i = 0; i < index - 1; ++i){
+                if (!temp->hasNext()){
+                    return;
+                }
+                temp = temp->getNext();
+            }
+            if (!temp->hasNext()){
+                return;
+            }
+            temp->setNext(temp->getNext()->getNext());
+        }
 };
 
 #endif
