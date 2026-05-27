@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
         list->add(98.f);
         std::cout << list->size() << std::endl;
     }
-    for (int i = 0;i<LENTGH;i++){
+    for (int i = 0;i<LENTGH+1;i++){
         list->remove();
         std::cout << list->size() << std::endl;
     }
