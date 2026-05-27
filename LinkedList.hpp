@@ -5,10 +5,15 @@
 template <typename T>
 class LinkedList{
     private:
-        Node<T> *head;
+        Node<T> *head; //head of the linkedList
     public:
         LinkedList() : head(nullptr) {}
 
+        /**
+         * Method to add at the end of it a new nbode with the given value
+         * 
+         * @param value the value of the new node
+         */
         void add(T value){
             Node<T> *new_node = new Node<T>(value);
             if(this->head == nullptr){
@@ -22,6 +27,11 @@ class LinkedList{
             temp->setNext(new_node);
         }
 
+        /**
+         * Getter for the size of the linkedList
+         * 
+         * @return the size of the linkedList
+         */
         const unsigned short size() const{
             unsigned short size = 0;
             Node<T> *temp = this->head;
@@ -32,6 +42,9 @@ class LinkedList{
             return size;
         }
 
+        /**
+         * Method to remove the last node of the LinkedList
+         */
         void remove(){
             if(this->head == nullptr){
                 return;
