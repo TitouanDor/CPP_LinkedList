@@ -12,7 +12,7 @@ int main(int argc, char *argv[]){
         std::cout << list->size() << std::endl;
     }
     for (int i = 0;i<LENTGH+1;i++){
-        list->remove();
+        list->removeEnd();
         std::cout << list->size() << std::endl;
     }
 
@@ -25,6 +25,10 @@ int main(int argc, char *argv[]){
     std::cout << list->size() << std::endl;
     list->removeAt(list->size() - 1);
     list->removeAt(0);
+    std::cout << list->size() << std::endl;
+    list->add(77.f);
+    std::cout << list->size() << std::endl;
+    list->remove(77.f);
     std::cout << list->size() << std::endl;
     
     

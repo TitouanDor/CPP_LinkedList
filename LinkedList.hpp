@@ -45,7 +45,7 @@ class LinkedList{
         /**
          * Method to remove the last node of the LinkedList
          */
-        void remove(){
+        void removeEnd(){
             if(this->head == nullptr){
                 return;
             }
@@ -86,6 +86,30 @@ class LinkedList{
                 return;
             }
             temp->setNext(temp->getNext()->getNext());
+        }
+
+        /**
+         * Method to remove the first node of the LinkedList with the given value
+         * 
+         * @param value the value of the node to remove
+         */
+        void remove(T value){
+            if(this->head == nullptr){
+                return;
+            }
+            if (this->head->getValue() == value){
+                this->head = this->head->getNext();
+                return;
+            }
+
+            Node<T> *temp = this->head;
+            while(temp->hasNext()){
+                if (temp->getNext()->getValue() == value){
+                    temp->setNext(temp->getNext()->getNext());
+                    return;
+                }
+                temp = temp->getNext();
+            }
         }
 };
 
